@@ -230,7 +230,7 @@ class SyncInterface {
 				for (const element of obj.ignore) {
 					if (typeof element !== "string") exitTypeErr()
 				}
-				return obj.ignore.join("\n")
+				return obj.ignore.length !== 0 ? obj.ignore.join("\n") : undefined
 			})()
 			const syncPair: RawSyncPair = {
 				local: obj.local,

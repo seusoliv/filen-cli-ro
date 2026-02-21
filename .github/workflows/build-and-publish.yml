@@ -13,7 +13,7 @@ jobs:
       - name: Install bun
         uses: oven-sh/setup-bun@v2
       - run: bun install
-      - run: bun build --compile --target=bun-linux-x64 --minify --sourcemap src/index.ts --define IS_RUNNING_AS_BINARY=true --define VERSION=manual --outfile dist/filen-cli-linux-x64
+      - run: bun run compile --target=bun-linux-x64 --define "VERSION=manual" --outfile dist/filen-cli-linux-x64
       - name: Execute binary
         run: dist/filen-cli-linux-x64 --skip-update --help
       - name: Upload artifact

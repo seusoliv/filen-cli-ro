@@ -15,9 +15,9 @@ jobs:
       - run: bun install
       - run: bun run compile --target=bun-linux-x64 --define "VERSION=v1.0.0" --outfile dist/filen-cli-v1.0.0-linux-x64
       - name: Execute binary
-        run: dist/filen-cli-linux-x64 --skip-update --help
+        run: dist/filen-cli-v1.0.0-linux-x64 --skip-update --help
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: filen-cli-linux-x64
-          path: dist/filen-cli-linux-x64
+          path: dist/filen-cli-v1.0.0-linux-x64

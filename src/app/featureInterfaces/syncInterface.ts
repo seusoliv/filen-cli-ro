@@ -86,6 +86,7 @@ class SyncInterface {
 			try {
 				const syncPairs = await this.resolveSyncPairs(locationsStr, disableLocalTrashFlag)
 				for (const syncPair of syncPairs) {
+					this.app.outUnlessQuiet("Addiditinal log")
 					this.app.outUnlessQuiet(`Syncing ${syncPair.local} to ${syncPair.remote} (${syncPair.syncMode})...`)
 				}
 
